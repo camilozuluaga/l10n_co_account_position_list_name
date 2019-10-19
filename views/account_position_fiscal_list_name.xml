@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="account_position_fiscal_list_name_filter" model="ir.ui.view">
+            <field name="name">account.position.fiscal.list.name.filter</field>
+            <field name="model">account.position.fiscal.list.name</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" string="Method" filter_domain="[('name','ilike',self)]"/>
+                    <field name="code" string="Code" filter_domain="[('code','ilike',self)]"/>
+               </search>
+            </field>
+        </record>
+
+
+        <record id="account_position_fiscal_list_name_form_view" model="ir.ui.view">
+            <field name="name">account.position.fiscal.list.name.form.view</field>
+            <field name="model">account.position.fiscal.list.name</field>
+            <field name="arch" type="xml">
+                <form string="Account Postion Fiscal List Name">
+                    <group>
+                        <field name='name' required='1'/>
+                        <field name='code' required='1'/>
+                        <field name='list_name_id' />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_position_fiscal_list_name_tree_view" model="ir.ui.view">
+            <field name="name">account.position.fiscal.list.name.tree.view</field>
+            <field name="model">account.position.fiscal.list.name</field>
+            <field name="arch" type="xml">
+                <tree string="Account Postion Fiscal List Name">
+                    <field name='name'/>
+                    <field name='code'/>
+                    <field name='list_name_id' />
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="account_position_fiscal_list_name_action" model="ir.actions.act_window">
+            <field name="name">Account Postion Fiscal List Name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.position.fiscal.list.name</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="l10n_co_account_position_list_name.account_position_fiscal_list_name_tree_view"/>
+            <field name="search_view_id" ref="l10n_co_account_position_list_name.account_position_fiscal_list_name_filter"/>
+        </record>
+
+        <menuitem id="l10n_co_account_payment_means_electronic_means_menu"
+            parent="account.menu_finance_configuration"
+            name="Electronic billing" />
+
+        <menuitem id="account_position_fiscal_list_name_action_sub_menu" 
+                    name="Account Payment Means"
+                    parent="l10n_co_account_payment_means_electronic_means_menu" 
+                    action="account_position_fiscal_list_name_action"/>
+
+    </data>
+
+</odoo>
