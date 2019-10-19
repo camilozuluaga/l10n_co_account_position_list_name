@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="l10n_co_account_position_list_name_form_fiscal_position" model="ir.ui.view">
+            <field name="name">l10n.co.account.position.list.name.form.fiscal.position</field>
+            <field name="model">account.fiscal.position</field>
+            <field name="inherit_id" ref="account.view_account_position_form"/>
+            <field name="arch" type="xml">
+            <data>
+
+                <xpath expr="//field[@name='active']" position="after" options="{'no_create': True}">
+                    <field name="list_name_id"/>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

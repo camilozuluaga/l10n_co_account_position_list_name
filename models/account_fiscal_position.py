@@ -5,12 +5,9 @@ import logging
 from odoo import api, fields, models, _
 _logger = logging.getLogger(__name__)
 
-class AccountPositionListName(models.Model):
+class AccountFiscalPosition(models.Model):
 
 
-	_name = 'account.fiscal.position.list.name'
+	_inherit = 'account.fiscal.position'
 
-
-	name = fields.Char(string=u'Name')
-	code = fields.Char(string=u'Code')
-	
+	list_name_id = fields.Many2one('account.fiscal.position.list.name', string = u'Régimen Fiscal')

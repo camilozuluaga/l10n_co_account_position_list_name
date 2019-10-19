@@ -15,7 +15,10 @@
 		'account'
 	],
 	'data': [
-
+		'data/account_fiscal_position_list_name_data.xml',
+		'views/account_position_fiscal_list_name.xml',
+		'views/account_fiscal_position.xml',
+		'security/ir.model.access.csv',
 		
 	],
 	'installable': True,
