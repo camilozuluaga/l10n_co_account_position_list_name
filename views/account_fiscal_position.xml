@@ -6,7 +6,6 @@
             <field name="model">account.fiscal.position</field>
             <field name="inherit_id" ref="account.view_account_position_form"/>
             <field name="arch" type="xml">
-            <data>
 
                 <xpath expr="//field[@name='active']" position="after" options="{'no_create': True}">
                     <field name="list_name_id"/>
